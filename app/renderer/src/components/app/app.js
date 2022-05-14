@@ -33,21 +33,13 @@ const base = style({
 
 const getOuterStyles = theme =>
   theme && theme.window
-    ? compose(
-        outerBase,
-        {
-          backgroundColor: theme.window.backgroundColor,
-        }
-      )
+    ? compose(outerBase, {
+        backgroundColor: theme.window.backgroundColor,
+      })
     : outerBase;
 
 const getInnerStyles = theme =>
-  theme && theme.window
-    ? compose(
-        base,
-        theme.window
-      )
-    : base;
+  theme && theme.window ? compose(base, theme.window) : base;
 
 export default class App extends React.PureComponent {
   static displayName = 'App';
